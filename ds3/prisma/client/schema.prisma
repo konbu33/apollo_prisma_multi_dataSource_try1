@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:WqLZGoiuWf@127.0.0.1:13306/my_database"
+}
+
+// url      = env("DATABASE_URL")
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client"
+}
+
+model Post {
+  id    Int    @id @default(autoincrement())
+  title String
+}
